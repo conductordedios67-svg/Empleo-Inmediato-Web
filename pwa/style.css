@@ -1,0 +1,293 @@
+
+/* ==========================================
+   EMPLEO INMEDIATO - DISEÑO PRINCIPAL
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-principal: #0b5ed7;
+    --color-principal-oscuro: #084298;
+    --color-fondo: #f3f6fa;
+    --color-blanco: #ffffff;
+    --color-texto: #1f2937;
+    --color-secundario: #64748b;
+    --color-borde: #d9e1ec;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* ENCABEZADO COMPACTO */
+
+.encabezado {
+    background: var(--color-principal);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 12px 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.encabezado p {
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+/* DISTRIBUCIÓN EN TRES COLUMNAS */
+
+.panel-principal {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr) minmax(200px, 1fr);
+    gap: 16px;
+    width: 100%;
+    padding: 18px;
+    align-items: start;
+    flex: 1;    
+}
+
+/* PANELES */
+
+.columna-busqueda,
+.columna-ofertas,
+.columna-publicidad {
+    min-width: 0;
+    background: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+.columna-busqueda h2,
+.columna-ofertas h2,
+.columna-publicidad h2 {
+    margin: 0 0 16px;
+    font-size: 19px;
+}
+
+.columna-busqueda h2,
+.columna-publicidad h2 {
+    text-align: center;
+}
+
+/* BUSCADOR */
+
+.buscador label {
+    display: block;
+    margin: 15px 0 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#buscar,
+#ciudad {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    font-size: 15px;
+    border: 1px solid #b8c4d3;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+#buscar:focus,
+#ciudad:focus {
+    outline: 2px solid rgba(11, 94, 215, 0.2);
+    border-color: var(--color-principal);
+}
+
+#botonBuscar {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px 8px;
+    background: var(--color-principal);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#botonBuscar:hover {
+    background: var(--color-principal-oscuro);
+}
+
+/* OFERTAS LABORALES */
+
+.columna-ofertas {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+}
+
+.columna-ofertas h2 {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.estado-ofertas {
+    padding: 16px;
+    color: var(--color-secundario);
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 7px;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.tarjeta-oferta {
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.tarjeta-oferta h3 {
+    margin: 0 0 10px;
+    font-size: 17px;
+    color: var(--color-principal-oscuro);
+}
+
+.tarjeta-oferta p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--color-secundario);
+}
+
+.tarjeta-oferta .boton-oferta {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 13px;
+    background: var(--color-principal);
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* PUBLICIDAD */
+
+.espacio-publicidad {
+    min-height: 280px;
+    width: 100%;
+    padding: 15px;
+    background: #eef2f7;
+    border: 1px dashed #b7c0cc;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #7a8796;
+    font-size: 12px;
+}
+
+/* PIE DE PÁGINA */
+
+.pie {
+    margin-top: 10px;
+    padding: 15px;
+    text-align: center;
+    background: #172033;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.pie p {
+    margin: 0;
+}
+
+/* TABLETAS */
+
+@media (max-width: 900px) {
+    .panel-principal {
+        grid-template-columns: minmax(190px, 1fr) minmax(0, 2fr);
+    }
+
+    .columna-publicidad {
+        grid-column: 1 / -1;
+    }
+
+    .espacio-publicidad {
+        min-height: 100px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .encabezado h1 {
+        font-size: 20px;
+    }
+
+    .encabezado p {
+        font-size: 12px;
+    }
+
+    .panel-principal {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .columna-busqueda,
+    .columna-ofertas,
+    .columna-publicidad {
+        padding: 14px;
+    }
+
+    .columna-ofertas {
+        min-height: 250px;
+    }
+
+    .espacio-publicidad {
+        min-height: 90px;
+    }
+}
+
+/* BOTÓN ROJO DETENER */
+
+#botonDetener {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 8px;
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#botonDetener:hover {
+    background: #b91c1c;
+}
+
+#botonDetener:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+

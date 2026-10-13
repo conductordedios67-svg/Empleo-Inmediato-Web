@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Empleo Inmediato</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <h1>EMPLEO INMEDIATO EN ECUADOR</h1>
+        <p>Encuentra oportunidades de trabajo de forma rápida y sencilla.</p>
+    </header>
+
+    <main class="panel-principal">
+
+        <!-- COLUMNA IZQUIERDA: 25% -->
+        <aside class="columna-busqueda">
+
+            <section class="buscador">
+                <h2>Buscar empleo</h2>
+
+                <label for="buscar">Cargo o profesión</label>
+                <input
+                    type="text"
+                    id="buscar"
+                    placeholder="Ej.: Abogado"
+                >
+
+                <label for="ciudad">Ciudad</label>
+                <select id="ciudad">
+                    <option value="">Todas las ciudades</option>
+                    <option value="Quito">Quito</option>
+                    <option value="Cayambe">Cayambe</option>
+                    <option value="Pedro Moncayo">Pedro Moncayo</option>
+                    <option value="Guayaquil">Guayaquil</option>
+                    <option value="Cuenca">Cuenca</option>
+                </select>
+
+                <button id="botonBuscar" type="button">
+                    BUSCAR EMPLEO
+                </button>
+
+                <button id="botonDetener" type="button">
+                    DETENER
+                </button>
+
+            </section>
+
+        </aside>
+
+
+        <!-- COLUMNA CENTRAL: 50% -->
+        <section class="columna-ofertas">
+
+            <h2>Ofertas de empleo</h2>
+
+            <p id="estadoOfertas" class="estado-ofertas">
+                Las ofertas de empleo aparecerán aquí.
+            </p>
+
+            <div id="listaOfertas">
+                <!-- Aquí aparecerán las ofertas encontradas -->
+            </div>
+
+        </section>
+
+
+        <!-- COLUMNA DERECHA: 25% -->
+        <aside class="columna-publicidad">
+
+            <h2>Publicidad</h2>
+
+            <div
+                id="espacioPublicidad"
+                class="espacio-publicidad"
+            >
+                <span>ESPACIO PUBLICITARIO</span>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <footer class="pie">
+        <p>QUANTUM TECHNOLOGIES 2026</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
